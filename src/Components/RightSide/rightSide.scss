@@ -1,0 +1,55 @@
+
+.rightContact::-webkit-scrollbar {
+  background-color: #000;
+  width: 7px;
+}
+.rightContact::-webkit-scrollbar-thumb {
+  width: 7px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.location__title, .socials__title {
+  margin-bottom: 40px;
+  color: #fffd;
+  font-size: 36px;
+  font-weight: 600;
+}
+.location__destination {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: #fffc;
+}
+.location__tel {
+  color: #fffc;
+  font-style: normal;
+  transition: color .3s linear;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.socials__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-right: 16px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: #2a2a2a84;
+  transition: border 0.3s linear, background-color 0.7s linear;
+  &:hover {
+    background-color: #fff;
+    border-color: #fff;
+  }
+}
+.socials__mail {
+  color: #fffa;
+  transition: color .3s linear;
+  &:hover {
+    color: #fff;
+  }
+}

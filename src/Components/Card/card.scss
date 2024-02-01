@@ -1,0 +1,46 @@
+.card__item {
+  position: relative;
+  border: 2px solid transparent;}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.icon__span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-size: 100% 100%;
+}
+
+.card__item:hover::before, .card__item:hover::after {
+  content: "";
+  position: absolute;
+  inset: -0.2rem;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    var(--gradient-angle),
+    rgb(35, 53, 250),
+    #fe13e1,
+    blue 
+    );
+  animation: rotation 10s linear infinite;
+}
+.card__item::after {
+  filter: blur(3.5rem);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle:0deg;
+  }
+  100% {
+    --gradient-angle:360deg;
+  }
+}

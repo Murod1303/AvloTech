@@ -1,0 +1,109 @@
+.contact__form {
+  background-color: rgba(42, 42, 42, 0.5);
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+.contact__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+.contact__title-form , .contact__title-checkbox {
+  margin-bottom: 20px;
+  color: #fffc;
+  font-size: 20px;
+  font-weight: 500;
+}
+.contact__label {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.contact__input {
+  width: 100%;
+  padding: 15px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2a2a2a80;
+  border: 1.5px solid #fff9;
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+  transition: border-radius 0.5s linear;
+  &:focus {
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.contact__checkbox-label{
+  position: relative;
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5rem;
+  background-color: #2a2a2a;
+  z-index: 1;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background-color: #fff;
+    content: '';
+    z-index: -1;
+    transform: translateX(-101%);
+    transition: transform 0.3s cubic-bezier(0.47, 0, 0.745, 0.715), color 0.3s linear;
+  }
+}
+input[type=checkbox] {
+  display: none;
+}
+input:checked + .contact__checkbox-label {
+  color: #000;
+}
+input:checked + .contact__checkbox-label::after {
+  transform: none;
+}
+
+.contact__btn {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  border-radius:5rem;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.5s ease-in-out;
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background: linear-gradient(92deg, #0DDDE1 0%, #0C7AFF 100%);
+    content: '';
+    z-index: -1;
+    transform: translateX(-101%);
+    transition: transform 0.3s cubic-bezier(0.47, 0, 0.745, 0.715), color 0.3s linear;
+  }
+  &:hover::after {
+    transform: none;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
