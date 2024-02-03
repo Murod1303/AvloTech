@@ -15,7 +15,7 @@ export const Header = () => {
             to="/"
             className="header__logo rounded-lg overflow-hidden hover:opacity-80"
           >
-            <img src={logo} alt="" />
+            <img src={logo} alt="Site logo" />
           </Link>
           <div className="header__btn-wrapper bg-white mr-8 group">
             <div className="header__btn-inner flex item-center justify-between ml-0 group-hover:ml-8 ">
