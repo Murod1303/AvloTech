@@ -21,7 +21,7 @@
 .card__item:hover::before, .card__item:hover::after {
   content: "";
   position: absolute;
-  inset: -0.2rem;
+  inset: 0;
   z-index: -1;
   border-radius: inherit;
   background: linear-gradient(
@@ -33,7 +33,7 @@
   animation: rotation 10s linear infinite;
 }
 .card__item::after {
-  filter: blur(3.5rem);
+  filter: blur(0.5rem);
 }
 
 @keyframes rotation {

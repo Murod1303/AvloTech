@@ -1,12 +1,20 @@
 import "./header.scss";
 import logo from "../../assets/imgs/logo.png";
-import { RiMenuFoldLine } from "react-icons/ri";
-import { GrMapLocation } from "react-icons/gr";
+import { Link } from "react-router-dom";
+import { GrMap } from "react-icons/gr";
 import { LuMessagesSquare } from "react-icons/lu";
 import { BiHomeSmile } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { GoQuote } from "react-icons/go";
+import { useState } from "react";
 
 export const Header = () => {
+  const [menu, setMenu]=useState(false)
+  const handleOpen = ()=> {
+    setMenu(true)
+  }
+  const handleClose = ()=> {
+    setMenu(false)
+  }
   return (
     <header className="header">
       <div className="container">
@@ -17,33 +25,38 @@ export const Header = () => {
           >
             <img src={logo} alt="Site logo" />
           </Link>
-          <div className="header__btn-wrapper bg-white mr-8 group">
-            <div className="header__btn-inner flex item-center justify-between ml-0 group-hover:ml-8 ">
+          <button className="openMenu mr-4" onClick={handleOpen} type="button">
+          <GoQuote className="fill-slate-200 w-6 h-6"/>
+          </button>
+          <div className={menu ? "overlayMenu overlayMenuOpen":"overlayMenu"}>
+            <div className="px-3 max-w-[550px] w-full">
+              <div className={menu ===true ? "menu__wrapper openHeaderMenu" : "menu__wrapper"} >
               <Link
-                to="/"
-                className="location__link w-0 h-0 group-hover:w-6 group-hover:h-6 mr-0 group-hover:mr-[20px]"
-              >
-                <BiHomeSmile className="link__media w-full h-full hover:fill-sky-500" />
-              </Link>
-              <Link
-                to="/contacttel"
-                className="location__link w-0 h-0 group-hover:w-6 group-hover:h-6 mr-0 group-hover:mr-[20px]"
-              >
-                <LuMessagesSquare className="link__media w-full h-full hover:fill-sky-500" />
-              </Link>
-              <Link
-                to="/location"
-                className="location__link w-0 h-0 group-hover:w-6 group-hover:h-6 mr-0 group-hover:mr-[20px]"
-              >
-                <GrMapLocation className="link__media w-full h-full hover:fill-sky-500" />
-              </Link>
+                  to="/"
+                  className="location__link w-full   flex items-center justify-center gap-3 group"
+                >
+                  <BiHomeSmile className="link__media w-6 h-6 group-hover:fill-sky-600" />
+                  <strong className="group-hover:text-sky-600">Home</strong>
+                </Link>
+                <Link
+                  to="/contacttel"
+                  className="location__link w-full   flex items-center justify-center gap-3 group"
+                >
+                  <LuMessagesSquare className="link__media w-6 h-6 group-hover:fill-sky-600" />
+                  <strong className="group-hover:text-sky-600">Messages</strong>
+                </Link>
+                <Link
+                  to="/location"
+                  className="location__link w-full   flex items-center justify-center gap-3 group"
+                >
+                  <GrMap className="link__media w-6 h-6 group-hover:stroke-sky-600" />
+                  <strong className="group-hover:text-sky-600">Contact</strong>
+                </Link>
+                <button onClick={handleClose} className="hideMenu w-[200px] p-3 bg-orange-500 rounded-xl m-auto flex items-center justify-center" type="button">
+                  <strong className="mb-[2.5px]">close</strong>
+                </button>
+              </div>
             </div>
-            <button
-              className="header__btn bg-[#ffffff8f] hover:bg-[#fff]"
-              type="button"
-            >
-              <RiMenuFoldLine className="btn__menu-media w-6 h-6" />
-            </button>
           </div>
         </div>
       </div>

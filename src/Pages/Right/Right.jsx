@@ -7,7 +7,7 @@ export const Right = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/location" element={<RightSide />} />
         <Route path="/contacttel" element={<Contact />} />
       </Routes>
