@@ -29,7 +29,6 @@ export const Header = () => {
           <GoQuote className="fill-slate-200 w-6 h-6"/>
           </button>
           <div className={menu ? "overlayMenu overlayMenuOpen":"overlayMenu"}>
-            <div className="px-3 max-w-[550px] w-full">
               <div className={menu ===true ? "menu__wrapper openHeaderMenu" : "menu__wrapper"} >
               <Link
                   to="/"
@@ -56,7 +55,6 @@ export const Header = () => {
                   <strong className="mb-[2.5px]">close</strong>
                 </button>
               </div>
-            </div>
           </div>
         </div>
       </div>
