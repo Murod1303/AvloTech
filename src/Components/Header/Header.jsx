@@ -32,6 +32,7 @@ export const Header = () => {
               <div className={menu ===true ? "menu__wrapper openHeaderMenu" : "menu__wrapper"} >
               <Link
                   to="/"
+                  onClick={()=>handleClose()}
                   className="location__link w-full   flex items-center justify-center gap-3 group"
                 >
                   <BiHomeSmile className="link__media w-6 h-6 group-hover:fill-sky-600" />
@@ -39,6 +40,7 @@ export const Header = () => {
                 </Link>
                 <Link
                   to="/contacttel"
+                  onClick={()=>handleClose()}
                   className="location__link w-full   flex items-center justify-center gap-3 group"
                 >
                   <LuMessagesSquare className="link__media w-6 h-6 group-hover:fill-sky-600" />
@@ -46,12 +48,13 @@ export const Header = () => {
                 </Link>
                 <Link
                   to="/location"
+                  onClick={()=>handleClose()}
                   className="location__link w-full   flex items-center justify-center gap-3 group"
                 >
                   <GrMap className="link__media w-6 h-6 group-hover:stroke-sky-600" />
                   <strong className="group-hover:text-sky-600">Contact</strong>
                 </Link>
-                <button onClick={handleClose} className="hideMenu w-[200px] p-3 bg-orange-500 rounded-xl m-auto flex items-center justify-center" type="button">
+                <button onClick={handleClose} className="hideMenu w-[200px] p-3 bg-orange-500 rounded-xl m-auto flex items-center justify-center hover:opacity-85" type="button">
                   <strong className="mb-[2.5px]">close</strong>
                 </button>
               </div>
